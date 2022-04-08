@@ -3,14 +3,25 @@
     "version": "1.5.6.2",
     "homepage": "https://github.com/v2rayA/v2rayA/",
     "license": "AGPL-3.0-Only",
-    "url64": "https://github.com/v2rayA/v2rayA/releases/download/v1.5.6.2/v2raya_windows_x64_1.5.6.2.exe",
-    "url64.hash": "SHA256:34E3653190A730A6C20A54F16C48913357C81BCD11383F33CBFDBD30E03D1208",
-    "urlarm64": "https://github.com/v2rayA/v2rayA/releases/download/v1.5.6.2/v2raya_windows_arm64_1.5.6.2.exe",
-    "urlarm64.hash": "SHA256:d95f3f3baf644072e7068e5b87807b68c577ddc8a37bbf8ccf303928a30cd79a",
+    "url64": "https://github.com/v2rayA/v2raya-baulk/releases/download/v1.5.6.2/v2rayA-x64.zip",
+    "url64.hash": "056A122A875CAC1C9C7E925EB9382394F3CFBCC0022302786AE95D8AA51EFD57",
+    "urlarm64": "https://github.com/v2rayA/v2raya-baulk/releases/download/v1.5.6.2/v2rayA-A64.zip",
+    "urlarm64.hash": "0F791025E95D5E9263061E5EB4B2327A6F1E3CF960825FD5BBB1899D2105C766",
     "extension": "zip",
-    "links": [
+    "launchers": [
         "v2raya.exe",
         "v2ctl.exe",
         "wv2ray.exe"
-    ]
+    ],
+    "venv": {
+        "path": [
+            "${BAULK_PKGROOT}",
+            "${BAULK_VFS}\\.npm"
+        ],
+        "env": [
+            "V2RAY_LOCATION_ASSET=${BAULK_PKGROOT}\\data",
+            "V2RAYA_V2RAY_BIN=${BAULK_PKGROOT}\\wv2ray.exe",
+            "V2RAYA_CONFIG=${BAULK_VFS}\\v2raya"
+        ]
+    }
 }
