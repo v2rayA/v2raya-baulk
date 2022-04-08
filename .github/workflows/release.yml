@@ -1,6 +1,6 @@
 name: Release the zip files for baulk
 
-on: push
+on: release
 
 jobs:
   update:
