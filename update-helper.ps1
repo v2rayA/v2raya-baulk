@@ -36,5 +36,5 @@ Compress-Archive -Path "./v2rayA-A64/*" -DestinationPath "./v2rayA-A64.zip"
 
 $sha256_v2rayA_x64 = Get-FileHash "./v2rayA-x64.zip" | Select-Object Hash | ForEach-Object { ([string]$_.Hash) }
 $Sha256_v2rayA_a64 = Get-FileHash "./v2rayA-A64.zip" | Select-Object Hash | ForEach-Object { ([string]$_.Hash) }
-Write-Host $sha256_v2rayA_x64 > v2rayA_x64_sha256.txt
-Write-Host $sha256_v2rayA_A64 > v2rayA_A64_sha256.txt
+Write-Output $sha256_v2rayA_x64 | Out-File -Path v2rayA_x64_sha256.txt
+Write-Output $sha256_v2rayA_A64 | Out-File -Path v2rayA_A64_sha256.txt
