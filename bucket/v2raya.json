@@ -14,8 +14,10 @@
         "wv2ray.exe"
     ],
     "venv": {
+        "category": "v2raya",
         "path": [
-            "${BAULK_PKGROOT}"        ],
+            "${BAULK_PKGROOT}"
+        ],
         "env": [
             "V2RAY_LOCATION_ASSET=${BAULK_PKGROOT}\\data",
             "V2RAYA_V2RAY_BIN=${BAULK_PKGROOT}\\wv2ray.exe",
