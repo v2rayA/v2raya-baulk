@@ -13,6 +13,7 @@ jobs:
       - uses: Amadevus/pwsh-script@v2.0.1
       - name: Add zip files
         run: |
+         sudo apt install wget -y
          cd /home/runner/work/v2raya-baulk/v2raya-baulk
          pwsh -c ./update-helper.ps1
       - name: Release the zip files
