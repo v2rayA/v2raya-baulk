@@ -8,7 +8,7 @@
     "urlarm64": "https://github.com/v2rayA/v2raya-baulk/releases/download/v1.5.6.2-1/v2rayA-A64.zip",
     "urlarm64.hash": "150B2ECB6FB094DE6A5B303B88D6B1664F0A444259CDF1B509204B95B84AFF28",
     "extension": "zip",
-    "launchers": [
+    "links": [
         "v2raya.exe",
         "v2ctl.exe",
         "wv2ray.exe"
