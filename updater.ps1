@@ -2,8 +2,8 @@ $VersionLatest = curl --silent "https://api.github.com/repos/v2rayA/v2rayA-baulk
 $VersionCurrent = Get-Content .\bucket\v2raya.json | Select-String version | Select-Object -First 1| ForEach-Object { ([string]$_).Split('"')[3] }
 
 function UpdateInfo (){
-    $HashLatest_x64 = curl -Ls https://github.com/v2rayA/v2raya-baulk/releases/download/$VersionLatest/v2rayA_x64_sha256.txt
-    $HashLatest_A64 = curl -Ls https://github.com/v2rayA/v2raya-baulk/releases/download/$VersionLatest/v2rayA_A64_sha256.txt
+    $HashLatest_x64 = curl -Ls https://github.com/v2rayA/v2raya-baulk/releases/download/v$VersionLatest/v2rayA_x64_sha256.txt
+    $HashLatest_A64 = curl -Ls https://github.com/v2rayA/v2raya-baulk/releases/download/v$VersionLatest/v2rayA_A64_sha256.txt
     $HashCurrent_x64 = Get-Content .\bucket\v2raya.json | Select-String url64.hash | ForEach-Object { ([string]$_).Split('"')[3] }
     $HashCurrent_A64 = Get-Content .\bucket\v2raya.json | Select-String urlarm64.hash |  ForEach-Object { ([string]$_).Split('"')[3] }
     (Get-Content -Path "./bucket/v2raya.json") -replace $VersionCurrent, $VersionLatest | Out-File "./bucket/v2raya.json"
