@@ -14,16 +14,16 @@ New-Item -ItemType Directory -Path "./v2rayA-x64/data"
 New-Item -ItemType Directory -Path "./v2rayA-A64"
 New-Item -ItemType Directory -Path "./v2rayA-A64/data"
 
-wget $Url_v2rayA_x64 -O "./v2rayA-x64/v2raya.exe"
-wget $Url_v2rayA_A64 -O "./v2rayA-A64/v2raya.exe"
+Invoke-WebRequest $Url_v2rayA_x64 -OutFile "./v2rayA-x64/v2raya.exe"
+Invoke-WebRequest $Url_v2rayA_A64 -OutFile "./v2rayA-A64/v2raya.exe"
 
-wget $Url_v2ray_x64 -O "./v2ray-windows-x64.zip"
+Invoke-WebRequest $Url_v2ray_x64 -OutFile "./v2ray-windows-x64.zip"
 Expand-Archive -Path "./v2ray-windows-x64.zip" -DestinationPath "./v2rayA-x64/"
 Remove-Item -Path "./v2rayA-x64/*.json" -Force -Recurse
 Move-Item -Path  "./v2rayA-x64/*.dat" -Destination "./v2rayA-x64/data" -Force
 Remove-Item -Path "./v2rayA-x64/v2ray.exe" -Force -Recurse
 
-wget $Url_v2ray_A64 -O "./v2ray-windows-A64.zip"
+Invoke-WebRequest $Url_v2ray_A64 -OutFile "./v2ray-windows-A64.zip"
 Expand-Archive -Path "./v2ray-windows-A64.zip" -DestinationPath "./v2rayA-A64/"
 Remove-Item -Path "./v2rayA-A64/*.json" -Force -Recurse
 Move-Item -Path  "./v2rayA-A64/*.dat" -Destination "./v2rayA-A64/data" -Force
@@ -34,7 +34,5 @@ Compress-Archive -Path "./v2rayA-x64/*" -DestinationPath "./v2rayA-x64.zip"
 Compress-Archive -Path "./v2rayA-A64/*" -DestinationPath "./v2rayA-A64.zip"
 
 
-$sha256_v2rayA_x64 = Get-FileHash "./v2rayA-x64.zip" | Select-Object Hash | ForEach-Object { ([string]$_.Hash) }
-$Sha256_v2rayA_a64 = Get-FileHash "./v2rayA-A64.zip" | Select-Object Hash | ForEach-Object { ([string]$_.Hash) }
-Write-Output $sha256_v2rayA_x64 | Out-File -Path v2rayA_x64_sha256.txt
-Write-Output $sha256_v2rayA_A64 | Out-File -Path v2rayA_A64_sha256.txt
+Get-FileHash "./v2rayA-x64.zip" | Select-Object Hash | ForEach-Object { ([string]$_.Hash) } | Out-File -Path v2rayA_x64_sha256.txt
+Get-FileHash "./v2rayA-A64.zip" | Select-Object Hash | ForEach-Object { ([string]$_.Hash) } | Out-File -Path v2rayA_A64_sha256.txt

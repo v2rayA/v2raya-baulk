@@ -12,11 +12,10 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-      - name: Add zip files
+      - name: Add PowerShell script support
+        uses: Amadevus/pwsh-script@v2.0.1
+      - name: Create v2rayA zip files
         run: |
-         sudo apt install wget -y
-         curl https://github.com/PowerShell/PowerShell/releases/download/v7.2.2/powershell_7.2.2-1.deb_amd64.deb  --output powershell_7.2.2-1.deb_amd64.deb
-         sudo apt install ./powershell_7.2.2-1.deb_amd64.deb -y
          cd /home/runner/work/v2raya-baulk/v2raya-baulk
          pwsh -c ./update-helper.ps1
       - name: Release the zip files
