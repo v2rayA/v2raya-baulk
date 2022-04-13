@@ -4,9 +4,9 @@
     "homepage": "https://github.com/v2rayA/v2rayA/",
     "license": "AGPL-3.0-Only",
     "url64": "https://github.com/v2rayA/v2raya-baulk/releases/download/v1.5.6.2-1-1/v2rayA-x64.zip",
-    "url64.hash": "ADCE16BAA636B864A1B0D415C567CE7B5C515AEBD70C9350FD02879A5B2E32A3",
+    "url64.hash": "Not Found",
     "urlarm64": "https://github.com/v2rayA/v2raya-baulk/releases/download/v1.5.6.2-1-1/v2rayA-A64.zip",
-    "urlarm64.hash": "150B2ECB6FB094DE6A5B303B88D6B1664F0A444259CDF1B509204B95B84AFF28",
+    "urlarm64.hash": "Not Found",
     "extension": "zip",
     "venv": {
         "category": "v2raya",
