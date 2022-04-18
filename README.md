@@ -21,4 +21,4 @@ baulk install v2raya
 
 ## Run v2rayA with baulk-exec
 
-![XWxXJ.png](https://s1.328888.xyz/2022/04/09/XWxXJ.png)
+![Example running](https://s1.328888.xyz/2022/04/18/rhk0P.png)
