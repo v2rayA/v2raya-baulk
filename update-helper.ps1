@@ -1,5 +1,5 @@
-$Version_v2rayA = curl --silent "https://api.github.com/repos/v2raya/v2raya/releases/latest" | Select-String -Pattern "tag_name" | ForEach-Object { ([string]$_).Split('v')[1] } |  ForEach-Object { ([string]$_).Split('"')[0] }
-$Version_v2ray = curl --silent "https://api.github.com/repos/v2fly/v2ray-core/releases/latest" | Select-String -Pattern "tag_name" | ForEach-Object { ([string]$_).Split('v')[1] } |  ForEach-Object { ([string]$_).Split('"')[0] }
+$Version_v2rayA = Invoke-WebRequest -Uri 'https://api.github.com/repos/v2raya/v2raya/releases/latest' | ConvertFrom-Json | Select-Object tag_name | ForEach-Object { ([string]$_.tag_name).Split('v')[1] }
+$Version_v2ray = Invoke-WebRequest -Uri 'https://api.github.com/repos/v2fly/v2ray-core/releases/latest' | ConvertFrom-Json | Select-Object tag_name | ForEach-Object { ([string]$_.tag_name).Split('v')[1] }
 
 $Url_v2rayA_x64 = "https://github.com/v2rayA/v2rayA/releases/download/v$Version_v2rayA/v2raya_windows_x64_$Version_v2rayA.exe"
 $Url_v2rayA_A64 = "https://github.com/v2rayA/v2rayA/releases/download/v$Version_v2rayA/v2raya_windows_arm64_$Version_v2rayA.exe"
