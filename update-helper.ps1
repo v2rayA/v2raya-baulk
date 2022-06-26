@@ -17,16 +17,23 @@ New-Item -ItemType Directory -Path "./v2rayA-A64/data"
 Invoke-WebRequest $Url_v2rayA_x64 -OutFile "./v2rayA-x64/v2raya.exe"
 Invoke-WebRequest $Url_v2rayA_A64 -OutFile "./v2rayA-A64/v2raya.exe"
 
+Invoke-WebRequest -Uri "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" -OutFile "./LoyalsoldierSite.dat"
+Invoke-WebRequest -Uri "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" -OutFile "./LoyalsoldierIP.dat"
+
 Invoke-WebRequest $Url_v2ray_x64 -OutFile "./v2ray-windows-x64.zip"
 Expand-Archive -Path "./v2ray-windows-x64.zip" -DestinationPath "./v2rayA-x64/"
 Remove-Item -Path "./v2rayA-x64/*.json" -Force -Recurse
 Move-Item -Path  "./v2rayA-x64/*.dat" -Destination "./v2rayA-x64/data" -Force
+Copy-Item -Path "./LoyalsoldierSite.dat" -Destination "./v2rayA-x64/data"
+Copy-Item -Path "./LoyalsoldierIP.dat" -Destination "./v2rayA-x64/data"
 Remove-Item -Path "./v2rayA-x64/v2ray.exe" -Force -Recurse
 
 Invoke-WebRequest $Url_v2ray_A64 -OutFile "./v2ray-windows-A64.zip"
 Expand-Archive -Path "./v2ray-windows-A64.zip" -DestinationPath "./v2rayA-A64/"
 Remove-Item -Path "./v2rayA-A64/*.json" -Force -Recurse
 Move-Item -Path  "./v2rayA-A64/*.dat" -Destination "./v2rayA-A64/data" -Force
+Copy-Item -Path "./LoyalsoldierSite.dat" -Destination "./v2rayA-A64/data"
+Copy-Item -Path "./LoyalsoldierIP.dat" -Destination "./v2rayA-xA4/data"
 Remove-Item -Path "./v2rayA-A64/v2ray.exe" -Force -Recurse
 
 
