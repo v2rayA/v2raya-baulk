@@ -15,7 +15,7 @@
         ],
         "env": [
             "V2RAYA_V2RAY_ASSETSDIR=${BAULK_PKGROOT}\\data",
-            "V2RAYA_V2RAY_BIN=${BAULK_PKGROOT}\\wv2ray.exe",
+            "V2RAYA_V2RAY_BIN=${BAULK_PKGROOT}\\v2ray.exe",
             "V2RAYA_CONFIG=${BAULK_VFS}\\v2raya"
         ]
     }
